@@ -1,0 +1,95 @@
+@use 'partials/variables' as var;
+
+header{
+    background-color: var.$color-black;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: .5rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100dvw;
+    z-index: 120;
+
+    h1{
+        a{
+            color: var.$color-white;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 2;
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    i{
+        z-index: 200;
+        
+        svg{
+            cursor: pointer;
+            transform: scale(.96);
+            transition: .3s;
+
+            &:hover{
+                transform: rotate(90deg) scale(1);
+            }
+
+            &:active{
+                transform: rotate(180deg) scale(.8);
+            }
+        }
+    }
+
+    nav{
+        background-color: rgba(0, 0, 0, .6);
+        display: flex;
+        height: 100dvh;
+        justify-content: flex-end;
+        left: 0;
+        position: fixed;
+        top: 3.75rem;
+        width: 100dvw;
+        z-index: 100;
+
+        ul{ 
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            list-style: none;
+            width: 100%;
+
+            @media screen and (min-width: 640px) {
+                border-left: .2rem solid var.$color-white;
+                max-width: 640px;
+            }
+
+            li{
+                display: flex;
+
+                a{
+                    background-color: var.$color-secondary;
+                    border-bottom: .2rem solid var.$color-white;
+                    color: var.$color-black;
+                    font-size: 1.2rem;
+                    letter-spacing: 1;
+                    padding: 1rem 2rem;
+                    text-decoration: none;
+                    width: 100%;
+
+                    &:hover{
+                        background-color: var.$color-white;
+                        text-decoration: underline;
+                    }
+
+                    &:active{
+                        background-color: var.$color-white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
